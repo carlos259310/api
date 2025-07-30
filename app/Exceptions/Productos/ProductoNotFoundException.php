@@ -1,6 +1,6 @@
 <?php
 // app/Exceptions/ProductoNotFoundException.php
-namespace App\Exceptions;
+namespace App\Exceptions\Productos;
 
 use Exception;
 

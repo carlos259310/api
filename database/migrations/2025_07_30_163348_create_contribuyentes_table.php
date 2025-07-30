@@ -29,7 +29,7 @@ return new class extends Migration
             $table->timestamps();
             // Clave foránea para tipos_documentos
             $table->foreign('id_tipo_documento')
-                ->references('id')
+                ->references('id_tipo_documento')
                 ->on('tipos_documentos')
                 ->onDelete('cascade');
 

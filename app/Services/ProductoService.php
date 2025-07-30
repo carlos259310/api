@@ -6,7 +6,8 @@ use App\Contracts\Repositories\ProductoRepositoryInterface;
 use App\DTOs\Productos\CreateProductoDTO;
 use App\DTOs\Productos\UpdateProductoDTO;
 use App\DTOs\Productos\ProductoDTO;
-use App\Exceptions\ProductoNotFoundException;
+use App\Exceptions\Productos\ProductoNotFoundException;
+use App\Exceptions\Productos\ProductoNotFoundException as ProductosProductoNotFoundException;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProductoService
@@ -25,7 +26,7 @@ class ProductoService
         $producto = $this->repository->findById($id);
         
         if (!$producto) {
-            throw new ProductoNotFoundException("Producto con ID {$id} no encontrado");
+            throw new ProductosProductoNotFoundException("Producto con ID {$id} no encontrado");
         }
         
         return $producto;

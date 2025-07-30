@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tipos_documentos', function (Blueprint $table) {
-          $table->bigIncrements('id'); // Asegúrate de que sea bigIncrements
+            $table->bigIncrements('id_tipo_documento'); // Usar el nombre correcto
 
             $table->string('documento', 30);
             $table->string('codigo', 10);

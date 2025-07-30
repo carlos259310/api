@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\DTOs\Productos\CreateProductoDTO; 
 use App\DTOs\Productos\UpdateProductoDTO;
-use App\Exceptions\ProductoNotFoundException;
+use App\Exceptions\Productos\ProductoNotFoundException;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateProductoRequest;
-use App\Http\Requests\UpdateProductoRequest;
+use App\Http\Requests\Productos\CreateProductoRequest;
+use App\Http\Requests\Productos\UpdateProductoRequest;
 use App\Services\ProductoService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
