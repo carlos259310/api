@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Api\CiudadController;
 use App\Http\Controllers\Api\ContribuyenteController;
+use App\Http\Controllers\Api\ContribuyenteReportController;
 use App\Http\Controllers\Api\DepartamentoController;
 use App\Http\Controllers\Api\ProductoController;
 use App\Http\Controllers\Api\TiposDocumentoController;
@@ -44,5 +45,16 @@ Route::prefix('v1')->group(function () {
     Route::prefix('tipos-documento')->group(function () {
         Route::get('/', [TiposDocumentoController::class, 'index']);
         Route::get('{id}', [TiposDocumentoController::class, 'show']);
+    });
+
+    // Agregar al grupo de rutas v1
+    // ... rutas existentes ...
+
+    // Nuevas rutas para reportes
+    Route::prefix('reports')->group(function () {
+        Route::post('contribuyentes', [ContribuyenteReportController::class, 'generateContribuyentesReport']);
+        Route::get('download/{path}', [ContribuyenteReportController::class, 'downloadReport'])
+            ->name('api.reports.download')
+            ->where('path', '.*');
     });
 });

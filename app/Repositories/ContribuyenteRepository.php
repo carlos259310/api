@@ -23,7 +23,13 @@ class ContribuyenteRepository implements ContribuyenteRepositoryInterface
             $query->with(['ciudad', 'departamento', 'tipoDocumento']);
         }
 
-        return $query->paginate($perPage);
+        $paginator = $query->paginate($perPage);
+        // Mapear cada modelo a DTO
+        $paginator->getCollection()->transform(function ($contribuyente) {
+            return ContribuyenteDTO::fromModel($contribuyente);
+        });
+
+        return $paginator;
     }
 
     public function findById(int $id, bool $withRelations = false): ?ContribuyenteDTO

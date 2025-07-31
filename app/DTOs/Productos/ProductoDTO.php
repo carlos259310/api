@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dtos\Productos;
+namespace App\Dtos\Productos\Productos;
 
 class ProductoDTO
 {
