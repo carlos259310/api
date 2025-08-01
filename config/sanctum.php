@@ -81,4 +81,18 @@ return [
         'validate_csrf_token' => Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Personal Access Tokens
+    |--------------------------------------------------------------------------
+    |
+    | Sanctum uses this configuration to determine which Eloquent model
+    | should be used when storing and retrieving personal access tokens.
+    |
+    */
+
+    'personal_access_tokens' => [
+        'model' => Laravel\Sanctum\PersonalAccessToken::class,
+    ],
+
 ];
